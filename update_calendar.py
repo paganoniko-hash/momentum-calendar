@@ -67,6 +67,72 @@ def parse_ics(text):
     return out
 
 
+FF_URLS = ["https://nfs.faireconomy.media/ff_calendar_thisweek.json",
+           "https://nfs.faireconomy.media/ff_calendar_nextweek.json"]
+
+
+def parse_ff(feeds):
+    """feeds: lista di liste di eventi ForexFactory. Tiene USD con impatto High/Medium."""
+    out = []
+    for feed in feeds:
+        for e in feed:
+            if e.get("country") == "USD" and e.get("impact") in ("High", "Medium"):
+                dt.datetime.fromisoformat(e["date"])
+                out.append({"date": e["date"], "country": "USD", "impact": e["impact"],
+                            "title": e["title"], "forecast": e.get("forecast") or "",
+                            "previous": e.get("previous") or "", "src": "ff"})
+    return out
+
+
+def merge_ff(old, new):
+    """Per le settimane coperte dal feed, il feed e' la fonte: sostituisce qualunque riga nello stesso periodo."""
+    lo, hi = min(e["date"][:10] for e in new), max(e["date"][:10] for e in new)
+    keep = [e for e in old if not (lo <= e["date"][:10] <= hi)]
+    return sorted(keep + new, key=lambda e: e["date"])
+
+
+def refresh_ff(dry=False, feeds=None):
+    if feeds is None:
+        feeds, err = [], None
+        for u in FF_URLS:
+            try:
+                feeds.append(json.loads(fetch(u)))
+            except Exception as e:  # noqa: BLE001
+                err = e
+        if not feeds:
+            raise RuntimeError(f"ForexFactory non raggiungibile: {err}")
+    new = parse_ff(feeds)
+    if not new:
+        raise RuntimeError("feed ForexFactory senza eventi USD: file non modificato")
+    old = json.load(open(FILE, encoding="utf-8")) if os.path.exists(FILE) else []
+    merged = merge_ff(old, new)
+    before = {(e["date"][:10], e["title"]) for e in old}
+    after = {(e["date"][:10], e["title"]) for e in merged}
+    if not dry:
+        write(merged)
+    return sorted(after - before), sorted(before - after), len(merged)
+
+
+def write(data):
+    if os.path.exists(FILE):
+        shutil.copy(FILE, FILE + ".bak")
+    tmp = FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
+    os.replace(tmp, FILE)
+
+
+def refresh_any(dry=False):
+    """Prima ForexFactory (JSON, 2 settimane, tutti gli eventi USA), poi BLS come ripiego."""
+    try:
+        return refresh_ff(dry=dry)
+    except Exception as e1:  # noqa: BLE001
+        try:
+            return refresh(dry=dry)
+        except Exception as e2:  # noqa: BLE001
+            raise RuntimeError(f"{e1} | BLS: {e2}")
+
+
 def merge(old, new, today):
     """Tiene le righe manuali e quelle passate; sostituisce le righe bls future con le nuove."""
     managed = ("Non-Farm", "CPI", "PPI", "JOLTS")  # le righe di questi 4 tipi le gestisce la fonte BLS
@@ -97,6 +163,29 @@ def refresh(dry=False, text=None):
     return sorted(after - before), sorted(before - after), len(merged)
 
 
+def pull(url, dry=False):
+    """Scarica macro_calendar.json gia' pronto (es. da GitHub raw) e lo sostituisce dopo i controlli."""
+    data = json.loads(fetch(url))
+    if not isinstance(data, list) or not data or not all("date" in e and "title" in e for e in data):
+        raise RuntimeError("file scaricato non valido: calendario non modificato")
+    for e in data:
+        dt.datetime.fromisoformat(e["date"])  # solleva errore se una data e' malformata
+    if not dry:
+        if os.path.exists(FILE):
+            shutil.copy(FILE, FILE + ".bak")
+        tmp = FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=1)
+        os.replace(tmp, FILE)
+    return len(data)
+
+
+def sync():
+    """Se CALENDAR_URL e' impostata scarica il file da li', altrimenti prova la fonte BLS diretta."""
+    url = os.environ.get("CALENDAR_URL")
+    return pull(url) if url else refresh_any()[2]
+
+
 def due(days=7):
     """True se il file non e' stato modificato da piu' di 'days' giorni."""
     return (not os.path.exists(FILE)) or (dt.datetime.now().timestamp() - os.path.getmtime(FILE) > days * 86400)
@@ -107,7 +196,10 @@ if __name__ == "__main__":
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     try:
-        added, removed, n = refresh(dry=a.dry_run)
+        if os.environ.get("CALENDAR_URL"):
+            print(f"Calendario scaricato: {pull(os.environ['CALENDAR_URL'], dry=a.dry_run)} eventi")
+            raise SystemExit(0)
+        added, removed, n = refresh_any(dry=a.dry_run)
     except Exception as e:  # noqa: BLE001
         print(f"Aggiornamento non riuscito: {e}")
         raise SystemExit(1)

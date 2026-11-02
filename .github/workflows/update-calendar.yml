@@ -1,0 +1,22 @@
+name: Aggiorna calendario macro
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python update_calendar.py
+      - name: Salva se cambiato
+        run: |
+          git config user.name "calendar-bot"
+          git config user.email "calendar-bot@users.noreply.github.com"
+          git add macro_calendar.json
+          git diff --cached --quiet || git commit -m "Aggiorna calendario macro" && git push

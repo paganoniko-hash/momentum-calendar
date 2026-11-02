@@ -1,15 +1,158 @@
 [
-  {"date": "2026-11-03T10:00:00-05:00", "country": "USD", "impact": "Medium", "title": "JOLTS (Job Openings) set"},
-  {"date": "2026-11-06T08:30:00-05:00", "country": "USD", "impact": "High",   "title": "Non-Farm Payrolls / Employment Situation (ott)"},
-  {"date": "2026-11-10T08:30:00-05:00", "country": "USD", "impact": "High",   "title": "CPI - inflazione (ott)"},
-  {"date": "2026-11-13T08:30:00-05:00", "country": "USD", "impact": "Medium", "title": "PPI - prezzi alla produzione (ott)"},
-  {"date": "2026-11-17T08:30:00-05:00", "country": "USD", "impact": "High",   "title": "Retail Sales (ott)"},
-  {"date": "2026-11-18T14:00:00-05:00", "country": "USD", "impact": "High",   "title": "Verbali FOMC (riunione 27-28 ott)"},
-  {"date": "2026-11-25T08:30:00-05:00", "country": "USD", "impact": "High",   "title": "PCE / Personal Income and Outlays (ott)"},
-  {"date": "2026-11-25T08:30:00-05:00", "country": "USD", "impact": "Medium", "title": "GDP Q3 seconda stima"},
-  {"date": "2026-12-01T10:00:00-05:00", "country": "USD", "impact": "Medium", "title": "JOLTS (Job Openings) ott"},
-  {"date": "2026-12-04T08:30:00-05:00", "country": "USD", "impact": "High",   "title": "Non-Farm Payrolls / Employment Situation (nov)"},
-  {"date": "2026-12-09T14:00:00-05:00", "country": "USD", "impact": "High",   "title": "Decisione tassi FOMC + proiezioni (SEP), conferenza stampa 14:30 ET"},
-  {"date": "2026-12-10T08:30:00-05:00", "country": "USD", "impact": "High",   "title": "CPI - inflazione (nov)"},
-  {"date": "2026-12-15T08:30:00-05:00", "country": "USD", "impact": "Medium", "title": "PPI - prezzi alla produzione (nov)"}
+ {
+  "date": "2026-11-02T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "ISM Manufacturing PMI",
+  "forecast": "54.5",
+  "previous": "54.5",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-03T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "JOLTS Job Openings",
+  "forecast": "7.11M",
+  "previous": "7.08M",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-03T10:16:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Congressional Elections",
+  "forecast": "",
+  "previous": "",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-04T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "ISM Services PMI",
+  "forecast": "54.9",
+  "previous": "54.9",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-05T08:30:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Unemployment Claims",
+  "forecast": "197K",
+  "previous": "194K",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-06T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Average Hourly Earnings m/m",
+  "forecast": "0.3%",
+  "previous": "0.1%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-06T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Non-Farm Employment Change",
+  "forecast": "63K",
+  "previous": "29K",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-06T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Unemployment Rate",
+  "forecast": "4.2%",
+  "previous": "4.2%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-06T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Prelim UoM Consumer Sentiment",
+  "forecast": "47.8",
+  "previous": "46.3",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-06T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Prelim UoM Inflation Expectations",
+  "forecast": "",
+  "previous": "4.7%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-10T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "CPI - inflazione (ott)"
+ },
+ {
+  "date": "2026-11-13T08:30:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "PPI - prezzi alla produzione (ott)"
+ },
+ {
+  "date": "2026-11-17T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Retail Sales (ott)"
+ },
+ {
+  "date": "2026-11-18T14:00:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Verbali FOMC (riunione 27-28 ott)"
+ },
+ {
+  "date": "2026-11-25T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "PCE / Personal Income and Outlays (ott)"
+ },
+ {
+  "date": "2026-11-25T08:30:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "GDP Q3 seconda stima"
+ },
+ {
+  "date": "2026-12-01T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "JOLTS (Job Openings) ott"
+ },
+ {
+  "date": "2026-12-04T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Non-Farm Payrolls / Employment Situation (nov)"
+ },
+ {
+  "date": "2026-12-09T14:00:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Decisione tassi FOMC + proiezioni (SEP), conferenza stampa 14:30 ET"
+ },
+ {
+  "date": "2026-12-10T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "CPI - inflazione (nov)"
+ },
+ {
+  "date": "2026-12-15T08:30:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "PPI - prezzi alla produzione (nov)"
+ }
 ]

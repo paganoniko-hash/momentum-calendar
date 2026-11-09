@@ -90,16 +90,58 @@
   "src": "ff"
  },
  {
+  "date": "2026-11-10T04:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "FOMC Member Waller Speaks",
+  "forecast": "",
+  "previous": "",
+  "src": "ff"
+ },
+ {
   "date": "2026-11-10T08:30:00-05:00",
   "country": "USD",
   "impact": "High",
-  "title": "CPI - inflazione (ott)"
+  "title": "Core CPI m/m",
+  "forecast": "0.2%",
+  "previous": "0.3%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-10T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "CPI m/m",
+  "forecast": "0.3%",
+  "previous": "0.6%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-12T08:30:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Unemployment Claims",
+  "forecast": "194K",
+  "previous": "189K",
+  "src": "ff"
  },
  {
   "date": "2026-11-13T08:30:00-05:00",
   "country": "USD",
-  "impact": "Medium",
-  "title": "PPI - prezzi alla produzione (ott)"
+  "impact": "High",
+  "title": "Core PPI m/m",
+  "forecast": "0.3%",
+  "previous": "0.7%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-13T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "PPI m/m",
+  "forecast": "0.4%",
+  "previous": "1.3%",
+  "src": "ff"
  },
  {
   "date": "2026-11-17T08:30:00-05:00",

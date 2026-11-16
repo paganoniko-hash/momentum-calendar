@@ -144,16 +144,76 @@
   "src": "ff"
  },
  {
+  "date": "2026-11-16T12:00:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Fed Chairman Warsh Speaks",
+  "forecast": "",
+  "previous": "",
+  "src": "ff"
+ },
+ {
   "date": "2026-11-17T08:30:00-05:00",
   "country": "USD",
   "impact": "High",
-  "title": "Retail Sales (ott)"
+  "title": "Core Retail Sales m/m",
+  "forecast": "0.4%",
+  "previous": "0.9%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-17T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Retail Sales m/m",
+  "forecast": "0.2%",
+  "previous": "0.8%",
+  "src": "ff"
  },
  {
   "date": "2026-11-18T14:00:00-05:00",
   "country": "USD",
   "impact": "High",
-  "title": "Verbali FOMC (riunione 27-28 ott)"
+  "title": "FOMC Meeting Minutes",
+  "forecast": "",
+  "previous": "",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-19T08:30:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Philly Fed Manufacturing Index",
+  "forecast": "19.2",
+  "previous": "20.9",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-19T08:30:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Unemployment Claims",
+  "forecast": "199K",
+  "previous": "200K",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-20T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Revised UoM Consumer Sentiment",
+  "forecast": "52.1",
+  "previous": "51.0",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-20T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Revised UoM Inflation Expectations",
+  "forecast": "",
+  "previous": "4.3%",
+  "src": "ff"
  },
  {
   "date": "2026-11-25T08:30:00-05:00",

@@ -216,16 +216,67 @@
   "src": "ff"
  },
  {
+  "date": "2026-11-23T09:45:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Flash Manufacturing PMI",
+  "forecast": "54.5",
+  "previous": "56.0",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-23T09:45:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Flash Services PMI",
+  "forecast": "55.6",
+  "previous": "57.9",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-24T10:00:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "CB Consumer Confidence",
+  "forecast": "92.1",
+  "previous": "91.7",
+  "src": "ff"
+ },
+ {
   "date": "2026-11-25T08:30:00-05:00",
   "country": "USD",
   "impact": "High",
-  "title": "PCE / Personal Income and Outlays (ott)"
+  "title": "Core PCE Price Index m/m",
+  "forecast": "0.3%",
+  "previous": "0.3%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-25T08:30:00-05:00",
+  "country": "USD",
+  "impact": "High",
+  "title": "Prelim GDP q/q",
+  "forecast": "3.5%",
+  "previous": "3.4%",
+  "src": "ff"
  },
  {
   "date": "2026-11-25T08:30:00-05:00",
   "country": "USD",
   "impact": "Medium",
-  "title": "GDP Q3 seconda stima"
+  "title": "Prelim GDP Price Index q/q",
+  "forecast": "2.3%",
+  "previous": "2.3%",
+  "src": "ff"
+ },
+ {
+  "date": "2026-11-25T08:30:00-05:00",
+  "country": "USD",
+  "impact": "Medium",
+  "title": "Unemployment Claims",
+  "forecast": "201K",
+  "previous": "203K",
+  "src": "ff"
  },
  {
   "date": "2026-12-01T10:00:00-05:00",
